@@ -41,10 +41,12 @@ public class UserController {
      */
     @RequestMapping(value = "/all", method = RequestMethod.GET)
     public @ResponseBody
-    List<Map<String, Object>> getUserMap()
+    JSONObject getUserMap()
     {
         List<Map<String, Object>> u = userService.getMaplist();
-        return u;
+        JSONObject obj = new JSONObject();
+        obj.put("data",u);
+        return obj;
     }
 
 
