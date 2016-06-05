@@ -1,14 +1,11 @@
 package com.cym.demo.controller;
 
-import com.alibaba.fastjson.JSONObject;
-import com.cym.demo.model.User;
-import com.cym.demo.model.User1;
 import com.cym.demo.service.UserServiceI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
@@ -20,8 +17,8 @@ import java.util.Map;
  * Created by Administrator on 2016/6/3.
  */
 @Controller
-@RequestMapping("/user")
-public class UserController {
+//@RequestMapping("/index")
+public class IndexController {
     private UserServiceI userService;
 
     public UserServiceI getUserService()
@@ -41,16 +38,11 @@ public class UserController {
      * @return List<Map<String,Object>> to json串
      *
      */
-    @RequestMapping(value = "/all", method = RequestMethod.GET)
-    public @ResponseBody
-    JSONObject getUserMap(HttpServletRequest request, HttpServletResponse response)
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    public
+    String getIndex(HttpServletRequest request, HttpServletResponse response)
     {
-        response.setHeader("Access-Control-Allow-Origin","*");
-//        List<Map<String, Object>> u = userService.getMaplist();
-        User1 user1 =userService.getUserById1(1);
-        JSONObject obj = new JSONObject();
-        obj.put("data",user1);
-        return obj;
+        return "/index";
     }
 
 

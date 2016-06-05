@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.cym.demo.dao.UserMapper;
 import com.cym.demo.model.User;
+import com.cym.demo.model.User1;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -50,6 +51,9 @@ public class UserServiceImpl implements UserServiceI {
     public List<Map<String, Object>> getMaplist() {
         return userMapper.getMaplist();
     }
-
+    @Override
+    public User1 getUserById1(Integer id) {
+        return userMapper.selectByPrimaryKey1(id);
+    }
 
 }
