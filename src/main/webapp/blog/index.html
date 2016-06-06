@@ -4,39 +4,43 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../common/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../common/css/base.css">
+    <link rel="stylesheet" href="blog/css/index.css">
     <script src="../common/jquery/jquery.min.js"></script>
     <script src="../common/bootstrap/js/bootstrap.min.js"></script>
     <script src="../common/angular/angular.min.js"></script>
-    <link href="/blog/images/favicon.ico" mce_href="/blog/images/favicon.ico" rel="bookmark" type="image/x-icon" />
-    <link href="/blog/images/favicon.ico" mce_href="/blog/images/favicon.ico" rel="icon" type="image/x-icon" />
-    <link href="/blog/images/favicon.ico" mce_href="/blog/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="/blog/images/favicon.ico" mce_href="/blog/images/favicon.ico" rel="bookmark" type="image/x-icon"/>
+    <link href="/blog/images/favicon.ico" mce_href="/blog/images/favicon.ico" rel="icon" type="image/x-icon"/>
+    <link href="/blog/images/favicon.ico" mce_href="/blog/images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
     <title>首页</title>
 </head>
 <body>
-
-<div class="alert-danger" ng-app="myApp" ng-controller="myCtrl">
-
-    <p>选择网站:</p>
-
-    <select ng-model="selectedSite">
-        <option ng-repeat="x in sites" value="{{x.url}}">{{x.site}}</option>
-    </select>
-
-    <h1>你选择的是: {{selectedSite}}</h1>
-
+<div style="position:absolute; width:100%; height:100%; z-index:-1">
+    <img src="blog/images/BG.png" height="100%" width="100%"/>
 </div>
-
-<script>
-    var app = angular.module('myApp', []);
-    app.controller('myCtrl', function($scope) {
-        $scope.sites = [
-            {site : "Google", url : "http://www.google.com"},
-            {site : "Runoob", url : "http://www.runoob.com"},
-            {site : "Taobao", url : "http://www.taobao.com"}
-        ];
-    });
-</script>
-
-<p>该实例演示了使用 ng-repeat 指令来创建下拉列表，选中的值是一个字符串。</p>
+<nav class="navbar  navbar-default " role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                data-target="#example-navbar-collapse">
+            <span class="sr-only">切换导航</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a href="#"><img class="navbar-brand" src="blog/images/logo.png"><span id="page-name">陈烟明个人博客</span></a>
+    </div>
+    <div class="collapse navbar-collapse" id="example-navbar-collapse">
+        <ul class="nav navbar-nav">
+            <li><a href="#" class="active">首页</a></li>
+            <li><a href="#">博客</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container" id="main-view">
+    <div class="hello-font"><span>HAVE A GOOD DAY</span></div>
+    <div class="rectangle"><span class="rectabgle-1"></span><span class="welcome-font">welcome to my blog</span><span class="rectabgle-1"></span></div>
+    <div class="go-myblog"><span>进入我的个人博客</span></div>
+</div>
 </body>
 </html>
