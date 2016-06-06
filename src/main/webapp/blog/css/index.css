@@ -23,6 +23,20 @@ span#page-name {
     margin-top: 0.5rem;
     color: rgba(107, 190, 253, 0.8);
     font-size: 1rem;
+
+}
+@media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) {
+    #page-name{
+        background-image: -webkit-linear-gradient(left, #6BBEFD, #ffffff 25%, #6BBEFD 50%, #ffffff 75%, #6BBEFD);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-background-size: 200% 100%;
+        -webkit-animation: masked-animation 4s infinite linear;
+    }
+}
+@-webkit-keyframes masked-animation {
+    0%  { background-position: 0 0;}
+    100% { background-position: -100% 0;}
 }
 .go-myblog{
     text-align: center;
